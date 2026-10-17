@@ -177,7 +177,8 @@ h2 {
   padding-bottom: 14px; border-bottom: 2px solid var(--ink);
 }
 .era-head .years { font: 600 15px/1 var(--text); color: var(--ink-mute); font-variant-numeric: tabular-nums; }
-.era-intro { margin: 16px 0 12px; max-width: 68ch; }
+/* Inleidingen en profieltekst staan in de leeskolom, net als de functies en rijen eronder. */
+.era-intro { margin: 16px 0 12px calc(var(--col-meta) + 34px); }
 
 .job { display: grid; grid-template-columns: var(--col-meta) 1fr; }
 .job .meta { padding: 34px 28px 0 0; font-size: 14px; line-height: 1.45; color: var(--ink-mute); }
@@ -254,7 +255,7 @@ table.list td.cname { color: var(--ink); font-weight: 500; }
 table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
 
 /* ---------- over mij ---------- */
-.prose { max-width: 68ch; margin-top: 18px; }
+.prose { margin: 18px 0 0 calc(var(--col-meta) + 34px); }
 .prose p { margin: 0 0 16px; font-size: 17.5px; line-height: 1.65; }
 .certs.expertise .cdate { font-weight: 600; }
 .cmeta a { color: var(--red-text); font-weight: 600; text-underline-offset: 3px; }
@@ -314,6 +315,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
   .overview .col-role { display: none; }
   .overview td.when { white-space: normal; min-width: 7.5em; }
   .era { padding-top: 56px; }
+  .era-intro, .prose { margin-left: 0; }
   h2 { font-size: 26px; }
   .job { display: block; position: relative; padding: 26px 0 26px 24px; border-left: 1px solid var(--line); }
   .job::before {
@@ -384,7 +386,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
   #talen { break-inside: avoid; }
   .era-head { break-after: avoid; padding-bottom: 2.5mm; border-bottom-width: 1.5pt; }
   .era-head .years { font-size: 9pt; }
-  .era-intro { margin: 3mm 0 0; max-width: none; break-after: avoid; }
+  .era-intro { margin: 3mm 0 0 calc(var(--col-meta) + 6mm); break-after: avoid; }
   p, li { orphans: 3; widows: 3; }
   .job { break-inside: avoid; }
   .job.long { break-inside: auto; }
@@ -419,7 +421,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
   table.list th { font-size: 7pt; padding-bottom: 1.6mm; }
   table.list td { padding: 1.3mm 4mm 1.3mm 0; }
   table.list tr { break-inside: avoid; }
-  .prose { max-width: none; margin-top: 3mm; }
+  .prose { margin: 3mm 0 0 calc(var(--col-meta) + 6mm); }
   .prose p { margin-bottom: 2.5mm; font-size: 9.8pt; line-height: 1.55; }
   .note-line { margin-top: 4mm; font-size: 8.6pt; }
   .cmeta a { text-decoration: none; }
