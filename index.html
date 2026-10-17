@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Filip Truyens</title>
+<link rel="canonical" href="https://filiptruyens.be/">
+<link rel="alternate" hreflang="nl" href="https://filiptruyens.be/nl/over-mij.html">
+<link rel="alternate" hreflang="fr" href="https://filiptruyens.be/fr/a-propos.html">
+<link rel="alternate" hreflang="en" href="https://filiptruyens.be/en/about.html">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+(function () {
+  var t = {nl: 'nl/over-mij.html', fr: 'fr/a-propos.html', en: 'en/about.html'};
+  var ls = navigator.languages || [navigator.language || 'en'];
+  for (var i = 0; i < ls.length; i++) {
+    var k = String(ls[i]).slice(0, 2).toLowerCase();
+    if (t[k]) { location.replace(t[k]); return; }
+  }
+  location.replace(t.en);
+})();
+</script>
+</head>
+<body>
+<main class="wrap chooser">
+  <h1>Filip Truyens</h1>
+  <p><a href="nl/over-mij.html" hreflang="nl" lang="nl">Nederlands</a> · <a href="fr/a-propos.html" hreflang="fr" lang="fr">Français</a> · <a href="en/about.html" hreflang="en" lang="en">English</a></p>
+</main>
+</body>
+</html>
