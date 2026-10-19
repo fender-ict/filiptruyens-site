@@ -118,10 +118,11 @@ h1 {
   color: var(--ink);
 }
 .lead { margin: 0 0 30px; max-width: 60ch; font-size: 19px; line-height: 1.55; }
-.actions { display: flex; flex-wrap: wrap; gap: 12px; }
+/* Compacte knoppen: de vier knoppen passen op één rij in NL, FR en EN bij 1280 px (Filip, 19/10/2026, vanaf v29). */
+.actions { display: flex; flex-wrap: wrap; gap: 10px; }
 .btn {
-  display: inline-flex; align-items: center; gap: 10px;
-  padding: 13px 20px; border-radius: 10px;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 13px 14px; border-radius: 10px;
   font: 600 15px/1 var(--text); text-decoration: none;
   background: var(--ink); color: var(--bg); border: 1px solid var(--ink);
   transition: background-color .15s ease, border-color .15s ease, color .15s ease;
@@ -162,6 +163,9 @@ h2 {
 }
 .overview td { padding: 9px 16px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 .overview td.when { width: 1%; white-space: nowrap; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
+/* Periode in drie cellen: begin rechts, streepje in het midden, einde links; zo staan ze in elke taal onder elkaar. */
+.overview td.from { text-align: right; padding-right: 0; }
+.overview td.dash { padding-left: 0.4em; padding-right: 0.4em; text-align: center; }
 .overview td.org a { color: var(--ink); font-weight: 600; text-decoration: none; }
 .overview td.org a:hover { color: var(--red-text); text-decoration: underline; text-underline-offset: 3px; }
 .overview tr.era-row td {
@@ -313,7 +317,6 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
   .stat span { font-size: 13px; }
   .overview { padding-top: 48px; }
   .overview .col-role { display: none; }
-  .overview td.when { white-space: normal; min-width: 7.5em; }
   .era { padding-top: 56px; }
   .era-intro, .prose { margin-left: 0; }
   h2 { font-size: 26px; }
