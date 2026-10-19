@@ -163,9 +163,6 @@ h2 {
 }
 .overview td { padding: 9px 16px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
 .overview td.when { width: 1%; white-space: nowrap; color: var(--ink-mute); font-variant-numeric: tabular-nums; }
-/* Periode in drie cellen: begin rechts, streepje in het midden, einde links; zo staan ze in elke taal onder elkaar. */
-.overview td.from { text-align: right; padding-right: 0; }
-.overview td.dash { padding-left: 0.4em; padding-right: 0.4em; text-align: center; }
 .overview td.org a { color: var(--ink); font-weight: 600; text-decoration: none; }
 .overview td.org a:hover { color: var(--red-text); text-decoration: underline; text-underline-offset: 3px; }
 .overview tr.era-row td {
@@ -317,6 +314,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
   .stat span { font-size: 13px; }
   .overview { padding-top: 48px; }
   .overview .col-role { display: none; }
+  .overview td.when { white-space: normal; min-width: 7.5em; }
   .era { padding-top: 56px; }
   .era-intro, .prose { margin-left: 0; }
   h2 { font-size: 26px; }
