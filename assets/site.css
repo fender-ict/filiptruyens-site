@@ -330,7 +330,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
   .stat { padding: 18px 10px 16px 0; }
   .stat + .stat { padding-left: 12px; }
   .overview { padding-top: 48px; }
-  .overview .col-dur { display: none; }
+  .overview td { padding-right: 14px; }  /* duur ook op telefoon zichtbaar, op één regel (v42) */
   .overview td.when { white-space: normal; min-width: 7.5em; }
   .era { padding-top: 56px; }
   .era-intro, .prose { margin-left: 0; }
