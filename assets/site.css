@@ -289,6 +289,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
 .cv-contact { margin: 0; font-size: var(--fs-small); color: var(--ink-mute); }
 .cv-contact a { color: var(--ink-soft); }
 .cv-contact .co { display: block; }   /* bedrijfsgegevens op een eigen regel */
+.cv-head .actions { margin-top: 16px; }   /* downloadknoppen, alleen op het scherm (v60) */
 .cv-head .portrait { width: 104px; height: 104px; border-radius: 14px; }
 .cv-grid { display: grid; grid-template-columns: 1fr 250px; gap: 40px; margin-top: 22px; }
 .cv-main h2, .cv-side h2 {
