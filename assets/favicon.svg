@@ -1,1 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" width="240" height="240"><title>Fender merkteken</title><rect width="240" height="240" fill="#0E1116"/><path d="M102.75 200.0V82.69999999999999H137.25V200.0Z" fill="#F5F6F8"/><circle cx="120.0" cy="48.2" r="20.7" fill="#CD5C5C"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="AI Advisory favicon">
+  <rect width="32" height="32" rx="8" fill="#0B1F33"/>
+  <svg x="3.5" y="3.5" width="25" height="25" viewBox="0 0 48 48">
+    <path d="M24 11.88 A14 14 0 0 1 24 36.12 A14 14 0 0 1 24 11.88 Z" fill="#C0442F"/>
+    <circle cx="17" cy="24" r="14" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+    <circle cx="31" cy="24" r="14" fill="none" stroke="#FFFFFF" stroke-width="5"/>
+  </svg>
+</svg>

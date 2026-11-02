@@ -1,33 +1,36 @@
-/* Filip Truyens, persoonlijke site. Kleuren en fonts uit het Fender ICT / AI Advisory-logo:
-   inkt #0E1116, indian red #CD5C5C, Instrument Sans voor koppen, Inter voor tekst.
-   (v33 en v34 waren een proef met Montserrat; vanaf v35 terug naar deze twee, met de vaste letterschaal.) */
+/* Filip Truyens, persoonlijke site. Huisstijl van AI Advisory by Fender ICT (brandbook v1), vanaf v65:
+   Diepzee #0B1F33, Baksteen #C0442F, Baksteen Licht #E2735A op donker, Nevel #EEF2F5, Leisteen #5B6B7C.
+   Manrope voor koppen en tekst, JetBrains Mono voor labels in hoofdletters.
+   (Tot v64: Instrument Sans en Inter, inkt #0E1116 en indian red #CD5C5C; v33 en v34 waren een proef met Montserrat.)
+   De namen --red, --red-text en --red-tint blijven; ze dragen nu Baksteen. */
 
 @font-face {
-  font-family: "Instrument Sans";
-  src: url("fonts/InstrumentSans-Variable.woff2") format("woff2");
-  font-weight: 400 700;
+  font-family: "Manrope";
+  src: url("fonts/Manrope-Variable-latin.woff2") format("woff2");
+  font-weight: 400 800;
   font-display: swap;
 }
 @font-face {
-  font-family: "Inter";
-  src: url("fonts/Inter-Variable.woff2") format("woff2");
-  font-weight: 100 900;
+  font-family: "JetBrains Mono";
+  src: url("fonts/JetBrainsMono-Variable-latin.woff2") format("woff2");
+  font-weight: 400 500;
   font-display: swap;
 }
 
 :root {
   --bg: #FFFFFF;
-  --band: #F5F6F8;
-  --line: #E3E6EA;
-  --line-strong: #C9CED5;
-  --ink: #0E1116;
-  --ink-soft: #3F4650;
-  --ink-mute: #646C77;
-  --red: #CD5C5C;
-  --red-text: #AD4242;
-  --red-tint: #FBEBEB;
-  --display: "Instrument Sans", "Segoe UI Variable Display", "Segoe UI", system-ui, sans-serif;
-  --text: "Inter", "Segoe UI", system-ui, sans-serif;
+  --band: #EEF2F5;
+  --line: #DDE4EA;
+  --line-strong: #C3CDD7;
+  --ink: #0B1F33;
+  --ink-soft: #34475A;
+  --ink-mute: #5B6B7C;
+  --red: #C0442F;
+  --red-text: #C0442F;
+  --red-tint: #F8E6E2;
+  --display: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --text: "Manrope", "Segoe UI", system-ui, sans-serif;
+  --mono: "JetBrains Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
   --col-meta: 210px;   /* breed genoeg voor de langste periode op één regel, ook in het Frans (v34) */
   /* Letterschaal (Filip, 19/10/2026, vanaf v34; voor Inter vanaf v35, iets kleiner dan v32): één grootte per soort tekst.
      Telefoon en pdf zetten dezelfde namen op een eigen waarde, verderop. */
@@ -47,32 +50,34 @@
   color-scheme: light;
 }
 
-@media screen and (prefers-color-scheme: dark) {
+/* Op het scherm altijd Diepzee, ook in lichte modus (Filip, 02/11/2026, vanaf v66).
+   De lichte waarden hierboven gelden alleen nog voor de pdf en de afdruk. */
+@media screen {
   :root:not([data-theme="light"]) {
-    --bg: #0E1116;
-    --band: #151A21;
-    --line: #262C35;
-    --line-strong: #39414C;
-    --ink: #F2F4F7;
-    --ink-soft: #C3C9D1;
-    --ink-mute: #949DA9;
-    --red: #E07070;
-    --red-text: #EE9090;
-    --red-tint: #2B1B1D;
+    --bg: #0B1F33;
+    --band: #102A44;
+    --line: #23384F;
+    --line-strong: #34506B;
+    --ink: #FFFFFF;
+    --ink-soft: #C5D0DB;
+    --ink-mute: #A9B8C7;
+    --red: #E2735A;
+    --red-text: #E2735A;
+    --red-tint: #2A2630;
     color-scheme: dark;
   }
 }
 :root[data-theme="dark"] {
-  --bg: #0E1116;
-  --band: #151A21;
-  --line: #262C35;
-  --line-strong: #39414C;
-  --ink: #F2F4F7;
-  --ink-soft: #C3C9D1;
-  --ink-mute: #949DA9;
-  --red: #E07070;
-  --red-text: #EE9090;
-  --red-tint: #2B1B1D;
+  --bg: #0B1F33;
+  --band: #102A44;
+  --line: #23384F;
+  --line-strong: #34506B;
+  --ink: #FFFFFF;
+  --ink-soft: #C5D0DB;
+  --ink-mute: #A9B8C7;
+  --red: #E2735A;
+  --red-text: #E2735A;
+  --red-tint: #2A2630;
   color-scheme: dark;
 }
 
@@ -100,8 +105,8 @@ img { max-width: 100%; display: block; }
   border-bottom: 1px solid var(--line);
 }
 .topbar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; height: 60px; }
-.brand { font: 700 var(--fs-h4)/1 var(--display); letter-spacing: -0.01em; color: var(--ink); text-decoration: none; }
-.brand .dot { color: var(--red); }
+.brand { display: inline-flex; align-items: center; gap: 10px; font: 800 var(--fs-h4)/1 var(--display); letter-spacing: -0.015em; color: var(--ink); text-decoration: none; }
+.brand svg { width: 26px; height: 18px; flex: none; }   /* het beeldmerk (de lens), vanaf v65 */
 .site-nav { display: flex; gap: 2px; margin-left: auto; }
 .site-nav a {
   padding: 8px 12px; border-radius: 8px;
@@ -125,12 +130,12 @@ img { max-width: 100%; display: block; }
 }
 .eyebrow {
   margin: 0 0 16px;
-  font: 600 var(--fs-label)/1.2 var(--text); letter-spacing: 0.1em; text-transform: uppercase;
+  font: 500 var(--fs-label)/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--red-text);
 }
 h1 {
   margin: 0 0 22px;
-  font: 700 clamp(42px, 6.8vw, 64px)/1.02 var(--display); letter-spacing: -0.025em;
+  font: 800 clamp(42px, 6.8vw, 64px)/1.02 var(--display); letter-spacing: -0.035em;
   color: var(--ink);
 }
 .lead { margin: 0 0 30px; max-width: 60ch; font-size: var(--fs-lead); line-height: 1.55; }
@@ -139,11 +144,11 @@ h1 {
 .btn {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 13px 14px; border-radius: 10px;
-  font: 600 var(--fs-button)/1 var(--text); text-decoration: none;
-  background: var(--ink); color: var(--bg); border: 1px solid var(--ink);
+  font: 700 var(--fs-button)/1 var(--text); text-decoration: none;
+  background: #C0442F; color: #fff; border: 1px solid #C0442F;   /* hoofdknop in Baksteen, zoals op fenderict.be (v65) */
   transition: background-color .15s ease, border-color .15s ease, color .15s ease;
 }
-.btn:hover { background: var(--red-text); border-color: var(--red-text); color: #fff; }
+.btn:hover { background: #A93A27; border-color: #A93A27; color: #fff; }
 .btn.ghost { background: transparent; color: var(--ink); border-color: var(--line-strong); }
 .btn.ghost:hover { border-color: var(--ink); background: transparent; color: var(--ink); }
 .btn svg { width: 16px; height: 16px; flex: none; }
@@ -158,7 +163,7 @@ h1 {
 .stat + .stat { padding-left: 28px; border-left: 1px solid var(--line); }
 .stat b {
   display: block; margin-bottom: 6px;
-  font: 700 var(--fs-stat)/1 var(--display); letter-spacing: -0.035em; color: var(--ink);
+  font: 800 var(--fs-stat)/1 var(--display); letter-spacing: -0.035em; color: var(--ink);
   font-variant-numeric: tabular-nums;
 }
 .stat b i { font-style: normal; color: var(--red); }
@@ -167,14 +172,14 @@ h1 {
 /* ---------- overzicht ---------- */
 h2 {
   margin: 0;
-  font: 700 var(--fs-h2)/1.15 var(--display); letter-spacing: -0.02em; color: var(--ink);
+  font: 800 var(--fs-h2)/1.15 var(--display); letter-spacing: -0.025em; color: var(--ink);
 }
 .overview { padding: 64px 0 8px; }
 .overview h2 { margin-bottom: 18px; }
 .overview table { width: 100%; border-collapse: collapse; font-size: var(--fs-body); }
 .overview th {
   text-align: left; padding: 0 16px 10px 0;
-  font: 600 var(--fs-label)/1 var(--text); letter-spacing: 0.1em; text-transform: uppercase;
+  font: 500 var(--fs-label)/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-mute); border-bottom: 1px solid var(--line-strong);
 }
 .overview td { padding: 12px 24px 12px 0; border-bottom: 1px solid var(--line); vertical-align: baseline; }  /* alles op één tekstlijn (v36) */
@@ -186,7 +191,7 @@ h2 {
 .overview td.org a:hover { color: var(--red-text); text-decoration: underline; text-underline-offset: 3px; }
 .overview tr.era-row td {
   padding: 22px 0 8px; border-bottom: 1px solid var(--line-strong);
-  font: 600 var(--fs-label)/1 var(--text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-text);
+  font: 500 var(--fs-label)/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--red-text);
 }
 .overview tbody tr.era-row:first-child td { padding-top: 14px; }
 
@@ -225,7 +230,7 @@ h2 {
 
 .label {
   margin: 22px 0 10px;
-  font: 600 var(--fs-label)/1 var(--text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-mute);
+  font: 500 var(--fs-label)/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-mute);
 }
 ul.wins { list-style: none; margin: 0; padding: 0; max-width: 70ch; }
 ul.wins li { position: relative; margin: 0 0 8px; padding-left: 20px; }
@@ -266,7 +271,7 @@ ul.wins strong { color: var(--ink); font-weight: 650; }
 table.list { width: 100%; margin-top: 20px; border-collapse: collapse; font-size: var(--fs-body); }
 table.list th {
   text-align: left; padding: 0 16px 10px 0;
-  font: 600 var(--fs-label)/1 var(--text); letter-spacing: 0.1em; text-transform: uppercase;
+  font: 500 var(--fs-label)/1 var(--mono); letter-spacing: 0.08em; text-transform: uppercase;
   color: var(--ink-mute); border-bottom: 1px solid var(--line-strong);
 }
 table.list td { padding: 9px 16px 9px 0; border-bottom: 1px solid var(--line); vertical-align: top; }
@@ -294,7 +299,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
 .cv-grid { display: grid; grid-template-columns: 1fr 250px; gap: 40px; margin-top: 22px; }
 .cv-main h2, .cv-side h2 {
   margin: 24px 0 10px;
-  font: 600 var(--fs-label)/1.2 var(--text); letter-spacing: 0.1em; text-transform: uppercase; color: var(--red-text);
+  font: 500 var(--fs-label)/1.2 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--red-text);
 }
 .cv-main section:first-child h2, .cv-side section:first-child h2 { margin-top: 0; }
 .cv-main > section > p { margin: 0 0 10px; font-size: var(--fs-compact); }
@@ -375,7 +380,7 @@ table.list td.dur { white-space: nowrap; color: var(--ink-mute); }
   @page {
     size: A4;
     margin: 14mm 15mm 17mm;
-    @bottom-right { content: counter(page) " / " counter(pages); font: 500 7.5pt "Inter", sans-serif; color: #646C77; }
+    @bottom-right { content: counter(page) " / " counter(pages); font: 500 7.5pt "Manrope", sans-serif; color: #5B6B7C; }
   }
   :root {
     --col-meta: 42mm;
